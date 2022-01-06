@@ -1,21 +1,13 @@
 <?php
-if (isset($_GET["id"])) {
-    $id = (int) $_GET["id"];
-    $getfile = file_get_contents('../data/articles.json');
-    $jsonfile = json_decode($getfile, true);
-    $jsonfile = $jsonfile["articles"];
-    $jsonfile = $jsonfile[$id];
-}
 
-if (isset($_POST["id"])) {
-    $id = (int) $_POST["id"];
+function edit_article(int $id, string $title, string $description) {
     $getfile = file_get_contents('../data/articles.json');
     $all = json_decode($getfile, true);
     $jsonfile = $all["articles"];
     $jsonfile = $jsonfile[$id];
 
-    $post["title"] = isset($_POST["title"]) ? $_POST["title"] : "";
-    $post["description"] = isset($_POST["description"]) ? $_POST["description"] : "";
+    $post["title"] = isset($title) ? $title : "";
+    $post["description"] = isset($description) ? $description : "";
     $post["date"] = $jsonfile["date"];
 
     if ($jsonfile) {
@@ -25,6 +17,18 @@ if (isset($_POST["id"])) {
         file_put_contents("../data/articles.json", json_encode($all));
     }
     header("Location: http://localhost:8080/articles/articles.php");
+}
+
+if (isset($_GET["id"])) {
+    $id = (int) $_GET["id"];
+    $getfile = file_get_contents('../data/articles.json');
+    $jsonfile = json_decode($getfile, true);
+    $jsonfile = $jsonfile["articles"];
+    $jsonfile = $jsonfile[$id];
+}
+
+if (isset($_POST["id"])) {
+    edit_article((int) $_POST["id"], $_POST["title"], $_POST["description"]);
 }
 ?>
 <?php if (isset($_GET["id"])): ?>

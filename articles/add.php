@@ -4,19 +4,26 @@
     <input type="submit" name="add"/>
 </form>
 <?php
-if (isset($_POST["add"])) {
+
+function create_article(string $title , string $description)
+{
     $file = file_get_contents('../data/articles.json');
     $data = json_decode($file, true);
-    unset($_POST["add"]);
-    var_dump($_POST);
     $data["articles"] = array_values($data["articles"]);
     $article = array(
-        'title' => $_POST["title"],
-        'description' => $_POST["description"],
+        'title' => $title,
+        'description' => $description,
         'date' => strtotime("now"),
     );
     array_push($data["articles"], $article);
     file_put_contents("../data/articles.json", json_encode($data));
     header("Location: http://localhost:8080/articles/articles.php");
+}
+
+if (isset($_POST["add"])) {
+    $file = file_get_contents('../data/articles.json');
+    $data = json_decode($file, true);
+    unset($_POST["add"]);
+    create_article($_POST["title"], $_POST["description"]);
 }
 ?>
