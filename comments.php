@@ -15,7 +15,8 @@ function add_comment(int $article_id, string $user, string $message)
 function remove_comment(int $comment_id)
 {
     $comments = json_decode(file_get_contents("data/comments.json"));
-    var_dump($comments);
+    array_slice($comments, $comment_id, 1);
+    var_dump(json_encode($comments));
 }
 
 function get_article_comments(int $article_id): array
@@ -30,7 +31,7 @@ function get_article_comments(int $article_id): array
     return $article_comments;
 }
 
-add_comment("Pierre", "Message");
-//remove_comment(0);
+add_comment(0, "Pierre", "Message");
+remove_comment(0);
 
 ?>
