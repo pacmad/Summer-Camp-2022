@@ -32,6 +32,4 @@ function get_article_comments(int $article_id): array
     return $article_comments;
 }
 
-remove_comment(0);
-
 ?>
