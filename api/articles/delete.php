@@ -17,3 +17,4 @@ function remove_article(int $id) {
 if (isset($_GET["id"])) {
     remove_article((int) $_GET["id"]);
 }
+?>
