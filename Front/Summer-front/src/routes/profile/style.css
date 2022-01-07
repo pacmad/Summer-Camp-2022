@@ -1,0 +1,27 @@
+.profile {
+	padding: 56px 20px;
+	min-height: 100%;
+	width: 100%;
+	text-align: center;
+}
+
+.pp_profile {
+	width: 500px;
+	height: 300px;
+	object-fit: cover;
+	border-radius: 2%;
+}
+
+.rectangle {
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 850px;
+	height: 400px;
+	background-color: #fff;
+	text-align: center;
+	border: 2px solid darkblue;
+	border-radius: 12%;
+	/* margin: auto; */
+	font-size: 150%;
+}

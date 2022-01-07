@@ -1,0 +1,5 @@
+ -> npm init
+ -> sudo npm i preact-cli
+ -> npx preact-cli create
+ -> default, [a remplir]
+ -> cd [nom_du_fichier]

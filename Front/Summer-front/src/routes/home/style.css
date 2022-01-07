@@ -1,0 +1,21 @@
+.home {
+	padding: 56px 20px;
+	min-height: 100%;
+	width: 100%;
+	background-image: url('../../assets/Summer.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.title {
+	text-align: left;
+	color:red;
+	font-size: 200%;
+}
+
+.pp {
+	width: 200px;
+	height: 200px;
+	object-fit: cover;
+	border-radius: 100%;
+}
