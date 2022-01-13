@@ -6,7 +6,7 @@
   "scripts": {
     "build": "preact build",
     "serve": "sirv build --port 8080 --cors --single",
-    "back": "cd ../../api && php -S localhost:8000",
+    "back": "cd ../api && php -S localhost:8000",
     "dev": "preact watch",
     "lint": "eslint src",
     "test": "jest"

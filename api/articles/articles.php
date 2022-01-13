@@ -1,6 +1,12 @@
 <?php
 $getfile = file_get_contents('../data/articles.json', true);
 $jsonfile = json_decode($getfile);
+
+if (isset($_GET["get"])) {
+    header('Content-Type: application/json; charset=utf-8');
+    echo json_encode($jsonfile);
+    return;
+}
 ?>
 
 <p><a href="add.php">Add</a></p>
