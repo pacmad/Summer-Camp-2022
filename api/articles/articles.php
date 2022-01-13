@@ -3,6 +3,9 @@ $getfile = file_get_contents('../data/articles.json', true);
 $jsonfile = json_decode($getfile);
 
 if (isset($_GET["get"]) and $_GET["get"] == "true") {
+    header('Access-Control-Allow-Origin: *');
+    header('Access-Control-Allow-Methods: GET, POST');
+    header("Access-Control-Allow-Headers: X-Requested-With");
     header('Content-Type: application/json; charset=utf-8');
     echo json_encode($jsonfile);
     return;
