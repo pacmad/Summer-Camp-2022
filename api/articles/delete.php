@@ -11,7 +11,7 @@ function remove_article(int $id) {
         $all["articles"] = array_values($all["articles"]);
         file_put_contents("../data/articles.json", json_encode($all));
     }
-    header("Location: http://localhost:8080/articles/articles.php");
+    header("Location: http://localhost:8000/articles/articles.php");
 }
 
 if (isset($_GET["id"])) {

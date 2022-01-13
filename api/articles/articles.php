@@ -14,8 +14,8 @@ if (isset($_GET["get"]) and $_GET["get"] == "true") {
     <thead>
         <th>ID</th>
         <th>Titre</th>
-        <th>Date</th>
         <th>Description</th>
+        <th>Date</th>
     </thead>
     <tbody>
         <?php foreach ($jsonfile->articles as $index => $obj): ?>

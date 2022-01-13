@@ -1,8 +1,3 @@
-<form action="http://localhost:8080/articles/add.php" method="POST">
-    <input type="text" name="title" placeholder="title"/>
-    <input type="text" name="description" placeholder="description"/>
-    <input type="submit" name="add"/>
-</form>
 <?php
 
 function create_article(string $title , string $description)
@@ -17,7 +12,7 @@ function create_article(string $title , string $description)
     );
     array_push($data["articles"], $article);
     file_put_contents("../data/articles.json", json_encode($data));
-    header("Location: http://localhost:8080/articles/articles.php");
+    header("Location: http://localhost:8000/articles/articles.php");
 }
 
 if (isset($_POST["add"])) {
@@ -27,3 +22,9 @@ if (isset($_POST["add"])) {
     create_article($_POST["title"], $_POST["description"]);
 }
 ?>
+
+<form action="http://localhost:8000/articles/add.php" method="POST">
+    <input type="text" name="title" placeholder="title"/>
+    <input type="text" name="description" placeholder="description"/>
+    <input type="submit" name="add"/>
+</form>

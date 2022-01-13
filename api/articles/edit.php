@@ -16,7 +16,7 @@ function edit_article(int $id, string $title, string $description) {
         $all["articles"] = array_values($all["articles"]);
         file_put_contents("../data/articles.json", json_encode($all));
     }
-    header("Location: http://localhost:8080/articles/articles.php");
+    header("Location: http://localhost:8000/articles/articles.php");
 }
 
 if (isset($_GET["id"])) {
@@ -32,7 +32,7 @@ if (isset($_POST["id"])) {
 }
 ?>
 <?php if (isset($_GET["id"])): ?>
-    <form action="http://localhost:8080/articles/edit.php" method="POST">
+    <form action="http://localhost:8000/articles/edit.php" method="POST">
         <input type="hidden" value="<?php echo $id ?>" name="id"/>
         <input type="hidden" value="<?php echo $jsonfile["date"] ?>" name="date"/>
         <input type="text" value="<?php echo $jsonfile["title"] ?>" name="title"/>
