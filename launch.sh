@@ -1,2 +1,2 @@
-cd Front/Summer-front;
+cd Summer-front;
 npm run back & npm run dev
