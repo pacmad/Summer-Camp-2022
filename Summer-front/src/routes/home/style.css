@@ -7,6 +7,20 @@
 	background-size: cover;
 }
 
+.article {
+	padding: 5px 5px;
+	margin-left: 20%;
+	margin-right: 15%;
+	margin-top: 5%;
+	margin-bottom: 5%;
+	width: auto;
+	height: auto;
+	background-color: rgb(231, 187, 187);
+	border: 2px solid rgb(130, 130, 255);
+	text-align: left;
+	font-size: 150%;
+}
+
 .title {
 	text-align: left;
 	color:red;
